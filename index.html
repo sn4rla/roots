@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width-width, initial-scale=1" />
+  <title>Roots — Live With Roots</title>
+  <meta name="description" content="Roots helps you plan projects, stay on top of maintenance, and see the impact on your home’s value."/>
+  <style>
+    :root{
+      --bg: #fafafa;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --card: #ffffff;
+
+      /* 🌿 Updated premium green palette */
+      --brand: #4a7c59;        /* muted forest green */
+      --brand-50: #edf7f1;     /* soft green-tinted neutral */
+      --accent-dark: #32543a;  /* deep green for logo split */
+
+      --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
+      color: var(--text);
+      background: var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,.75);
+      border-bottom: 1px solid var(--line);
+    }
+    header .row { display:flex; align-items:center; justify-content:space-between; padding: 16px 0; }
+
+    nav { display:none; gap:24px; color:#374151; }
+    @media (min-width: 768px){ nav{ display:flex; } }
+
+    .btn { display:inline-block; border-radius: 12px; padding: 10px 16px; font-weight:600; font-size:14px; border: 1px solid transparent; }
+    .btn-ghost{ color:#374151; }
+    .btn-ghost:hover{ background:#f3f4f6; }
+    .btn-dark{ color:#fff; background:#111827; }
+    .btn-dark:hover{ background:#0b1220; }
+    .btn-brand{ color:#fff; background: var(--brand); }
+    .btn-brand:hover{ background: var(--accent-dark); }
+
+    .hero { position: relative; overflow: hidden; }
+    .hero::before{
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(to bottom, rgba(236,248,241,.6), rgba(237,247,241,.4), transparent);
+      pointer-events:none;
+    }
+
+    /* LOGO REPLACEMENT */
+    .logo { font-weight: 700; letter-spacing: -0.02em; }
+    .logo.md { font-size: 24px; }
+    .logo.lg { font-size: 44px; }
+
+    /* Roots logo split tone */
+    .logo .root { color: var(--brand); }
+    .logo .s { color: var(--accent-dark); }
+
+    h1 { font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin: 16px 0 0; font-size: clamp(32px, 6vw, 56px); }
+
+    p.lead { margin-top: 12px; color: #374151; font-size: clamp(16px, 2vw, 18px); max-width: 720px; }
+
+    .email-form{ display:flex; flex-direction: column; gap: 12px; margin-top: 24px; max-width: 720px; }
+    .email-form input{ flex:1; border:1px solid #d1d5db; border-radius: 12px; padding: 12px 14px; font-size: 16px; background:#fff; }
+    .email-form input:focus{
+      outline: none;
+      box-shadow: 0 0 0 8px rgba(74,124,89,.18);
+      border-color:#6aa883;
+    }
+    @media (min-width: 520px){ .email-form{ flex-direction: row; } }
+
+    .muted { color: #6b7280; font-size: 14px; margin-top: 8px; }
+
+    .grid-3{ display:grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
+    @media (min-width: 880px){ .grid-3{ grid-template-columns: repeat(3, 1fr);} }
+
+    .card {
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .emoji{ font-size: 24px; margin-bottom: 4px; }
+    .card-title{ font-weight: 600; }
+    .card-desc{ color:#4b5563; font-size: 14px; margin-top: 4px; }
+
+    section { padding: 64px 0; }
+    .section-title{ font-weight: 700; font-size: clamp(28px, 4vw, 38px); letter-spacing:-0.02em; }
+
+    .kicker{
+      color: var(--accent-dark);
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:12px;
+      margin-bottom:8px;
+    }
+
+    .feature-wrap{ display:grid; grid-template-columns:1fr; gap: 24px; }
+    @media (min-width: 900px){ .feature-wrap{ grid-template-columns:1fr 1fr; } }
+
+    .dot{ width:8px; height:8px; border-radius:50%; background: var(--brand); margin-top: 6px; }
+
+    .how-n{
+      width:34px; height:34px; border-radius:999px;
+      background:var(--brand); color:#fff;
+      display:grid; place-items:center;
+      font-weight:700; margin-right:10px;
+    }
+
+    .price.highlight{ outline:2px solid var(--brand); }
+
+    footer{ border-top:1px solid var(--line); padding: 36px 0; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container row">
+      <div class="logo md"><span class="root">Root</span><span class="s">s</span></div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div>
+        <a class="btn btn-ghost" href="#">Sign in</a>
+        <a class="btn btn-dark" href="#cta">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container" style="padding-top: 64px; padding-bottom: 48px;">
+        <div style="max-width: 780px;">
+          <div class="logo lg"><span class="root">Root</span><span class="s">s</span></div>
+
+          <h1>Live With Roots</h1>
+
+          <p class="lead">
+            Roots helps you plan projects, stay on top of maintenance, and understand how everything connects inside your home.
+            A calm command center for everything house.
+          </p>
+
+          <form class="email-form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.');">
+            <input type="email" placeholder="you@domain.com" required />
+            <button class="btn btn-brand">Request early access</button>
+          </form>
+
+          <p class="muted">Private beta • iOS, Android, and Web</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="emoji">📋</div>
+            <div class="card-title">Plan projects</div>
+            <div class="card-desc">Scope work, estimate cost & time, and track to-dos from concept to completion.</div>
+          </div>
+          <div class="card">
+            <div class="emoji">🧰</div>
+            <div class="card-title">Maintenance timeline</div>
+            <div class="card-desc">Seasonal checklists and recurring reminders keep your home healthy.</div>
+          </div>
+          <div class="card">
+            <div class="emoji">📈</div>
+            <div class="card-title">Value & ROI</div>
+            <div class="card-desc">Log upgrades and see estimated effect on equity, insurance, and resale.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container feature-wrap">
+        <!-- KEEP SAME CONTENT (but updated for brand tone if desired) -->
+        
+        <div class="illustration">
+          <p class="muted">Kanban for your house</p>
+          <h3>Projects board</h3>
+          <!-- identical board UI -->
+          <div class="board">
+            <div class="board-grid">
+              <div class="col">
+                <div class="col-title">Backlog</div>
+                <div class="ticket">Finish basement bathroom</div>
+                <div class="ticket">Service HVAC & change filters</div>
+                <div class="ticket">Fence install • aluminum</div>
+              </div>
+              <div class="col">
+                <div class="col-title">In progress</div>
+                <div class="ticket">Patio expansion prep</div>
+                <div class="ticket">Get 2nd contractor bid</div>
+                <div class="ticket">Order fixtures & paint</div>
+              </div>
+              <div class="col">
+                <div class="col-title">Done</div>
+                <div class="ticket">Kitchen island design finalized</div>
+                <div class="ticket">Swap HVAC filters</div>
+                <div class="ticket">Front door painted</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bullets">
+          <div class="kicker">Why Roots</div>
+          <div class="section-title">Built for the way real homes grow</div>
+          <ul>
+            <li><span class="dot"></span><div><strong>Smart schedules</strong><br/><span class="muted">Auto-generate seasonal maintenance for your climate and house profile.</span></div></li>
+            <li><span class="dot"></span><div><strong>Budgets & bids</strong><br/><span class="muted">Compare quotes, track actuals vs. estimates, and avoid scope creep.</span></div></li>
+            <li><span class="dot"></span><div><strong>Photos & docs</strong><br/><span class="muted">Keep permits, receipts, paint codes, and warranties in one place.</span></div></li>
+            <li><span class="dot"></span><div><strong>Household collaboration</strong><br/><span class="muted">Assign tasks, share progress, and notify family or pros.</span></div></li>
+            <li><span class="dot"></span><div><strong>Home value insights</strong><br/><span class="muted">Record upgrades and see modeled impact on equity & resale.</span></div></li>
+            <li><span class="dot"></span><div><strong>Vendor rolodex</strong><br/><span class="muted">Rate pros, store contacts, and one-tap rehire from history.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" style="background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+      <div class="container">
+        <div class="kicker">How it works</div>
+        <div class="section-title">From idea → done, without the chaos</div>
+        <div class="how-grid">
+          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">1</div><strong>Create your place</strong></div><p class="muted">Answer a few questions: type, size, age, systems, and goals.</p></div>
+          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">2</div><strong>Import projects</strong></div><p class="muted">Start with templates (bath remodel, patio, fence) or add your own.</p></div>
+          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">3</div><strong>Schedule & budget</strong></div><p class="muted">Auto-build timelines, reminders, and budgets; attach quotes and receipts.</p></div>
+          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">4</div><strong>Track value</strong></div><p class="muted">Log improvements, see ROI trends, export for taxes, insurance, or sale.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="kicker">Pricing</div>
+        <div class="section-title">Start free. Grow as you do.</div>
+        <div class="pricing-grid">
+          
+          <!-- unchanged except styling -->
+          <div class="price">
+            <h4>Starter</h4>
+            <div class="val">$0</div>
+            <p>For single-home basics</p>
+            <ul>
+              <li>✓ Projects & tasks</li>
+              <li>✓ Maintenance reminders</li>
+              <li>✓ 5 document uploads</li>
+              <li>✓ Email support</li>
+            </ul>
+            <a class="btn btn-dark" style="display:block; text-align:center; margin-top:14px;" href="#cta">Get started</a>
+          </div>
+
+          <div class="price highlight">
+            <h4>Plus</h4>
+            <div class="val">$6/mo</div>
+            <p>For busy households</p>
+            <ul>
+              <li>✓ Unlimited projects</li>
+              <li>✓ Advanced schedules</li>
+              <li>✓ 25 document uploads</li>
+              <li>✓ Household sharing</li>
+            </ul>
+            <a class="btn btn-brand" style="display:block; text-align:center; margin-top:14px;" href="#cta">Start 14-day trial</a>
+          </div>
+
+          <div class="price">
+            <h4>Pro</h4>
+            <div class="val">$12/mo</div>
+            <p>For power users & pros</p>
+            <ul>
+              <li>✓ ROI & value modeling</li>
+              <li>✓ Unlimited uploads</li>
+              <li>✓ Vendor CRM</li>
+              <li>✓ Priority support</li>
+            </ul>
+            <a class="btn btn-dark" style="display:block; text-align:center; margin-top:14px;" href="#cta">Contact sales</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="background:#fff; border-top:1px solid var(--line);">
+      <div class="container faq">
+        <div class="kicker">FAQ</div>
+
+        <details><summary>Is Roots only for homeowners?</summary><p class="muted">It’s ideal for owners, but renters can use maintenance, inventory, and project tracking just as well.</p></details>
+        <br/>
+
+        <details><summary>Do you estimate ROI automatically?</summary><p class="muted">We provide modeled estimates based on project type, materials, locality factors, and resale data; you can override anytime.</p></details>
+        <br/>
+
+        <details><summary>Can I share with my partner or contractor?</summary><p class="muted">Yes — invite household members or share project views/links with vendors.</p></details>
+        <br/>
+
+        <details><summary>Will there be an iOS/Android app?</summary><p class="muted">Yes. Web first, with native apps following shortly after beta.</p></details>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap: 16px; flex-wrap: wrap;">
+      <div class="logo md"><span class="root">Root</span><span class="s">s</span></div>
+      <p class="muted">© 2025 Roots. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
