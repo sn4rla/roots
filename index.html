@@ -2,126 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Roots — Live With Roots</title>
-  <meta name="description" content="Roots helps you plan projects, stay on top of maintenance, and see the impact on your home’s value."/>
+  <meta name="description" content="Roots helps you organize projects, stay ahead on maintenance, and understand your home as a connected system—so it stays healthy, safe, and growing in value."/>
   <style>
     :root{
       --bg: #fafafa;
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --card: #ffffff;
-
-      /* 🌿 Updated premium green palette */
-      --brand: #4a7c59;        /* muted forest green */
-      --brand-50: #edf7f1;     /* soft green-tinted neutral */
-      --accent-dark: #32543a;  /* deep green for logo split */
-
+      --text: #111827;         
+      --muted: #6b7280;        
+      --line: #e5e7eb;         
+      --card: #ffffff;         
+      --brand: #059669;        
+      --brand-50: #ecfdf5;     
+      --path: #1f2937;         
+      --os: #475569;           
       --shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 24px rgba(0,0,0,.06);
     }
-
     * { box-sizing: border-box; }
-    html, body {
-      margin: 0; padding: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
-      color: var(--text);
-      background: var(--bg);
-    }
+    html, body { margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial; color: var(--text); background: var(--bg); }
     a { color: inherit; text-decoration: none; }
-
     .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-
-    header {
-      position: sticky; top: 0; z-index: 10;
-      backdrop-filter: blur(6px);
-      background: rgba(255,255,255,.75);
-      border-bottom: 1px solid var(--line);
-    }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); background: rgba(255,255,255,.75); border-bottom: 1px solid var(--line); }
     header .row { display:flex; align-items:center; justify-content:space-between; padding: 16px 0; }
-
     nav { display:none; gap:24px; color:#374151; }
     @media (min-width: 768px){ nav{ display:flex; } }
-
     .btn { display:inline-block; border-radius: 12px; padding: 10px 16px; font-weight:600; font-size:14px; border: 1px solid transparent; }
     .btn-ghost{ color:#374151; }
     .btn-ghost:hover{ background:#f3f4f6; }
     .btn-dark{ color:#fff; background:#111827; }
     .btn-dark:hover{ background:#0b1220; }
     .btn-brand{ color:#fff; background: var(--brand); }
-    .btn-brand:hover{ background: var(--accent-dark); }
-
+    .btn-brand:hover{ background:#10b981; }
     .hero { position: relative; overflow: hidden; }
     .hero::before{
       content:''; position:absolute; inset:0;
-      background: linear-gradient(to bottom, rgba(236,248,241,.6), rgba(237,247,241,.4), transparent);
+      background: linear-gradient(to bottom, rgba(240,253,250,.6), rgba(236,253,245,.4), transparent);
       pointer-events:none;
     }
-
-    /* LOGO REPLACEMENT */
     .logo { font-weight: 700; letter-spacing: -0.02em; }
     .logo.md { font-size: 24px; }
     .logo.lg { font-size: 44px; }
-
-    /* Roots logo split tone */
-    .logo .root { color: var(--brand); }
-    .logo .s { color: var(--accent-dark); }
-
+    .logo .path { color: var(--path); }
+    .logo .os { color: var(--os); }
     h1 { font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; margin: 16px 0 0; font-size: clamp(32px, 6vw, 56px); }
-
     p.lead { margin-top: 12px; color: #374151; font-size: clamp(16px, 2vw, 18px); max-width: 720px; }
-
     .email-form{ display:flex; flex-direction: column; gap: 12px; margin-top: 24px; max-width: 720px; }
     .email-form input{ flex:1; border:1px solid #d1d5db; border-radius: 12px; padding: 12px 14px; font-size: 16px; background:#fff; }
-    .email-form input:focus{
-      outline: none;
-      box-shadow: 0 0 0 8px rgba(74,124,89,.18);
-      border-color:#6aa883;
-    }
+    .email-form input:focus{ outline: none; box-shadow: 0 0 0 8px rgba(16,185,129,.15); border-color:#34d399; }
     @media (min-width: 520px){ .email-form{ flex-direction: row; } }
-
     .muted { color: #6b7280; font-size: 14px; margin-top: 8px; }
-
     .grid-3{ display:grid; grid-template-columns: 1fr; gap: 16px; margin-top: 40px; }
     @media (min-width: 880px){ .grid-3{ grid-template-columns: repeat(3, 1fr);} }
-
-    .card {
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: var(--shadow);
-    }
+    .card { background: var(--card); border:1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: var(--shadow); }
     .emoji{ font-size: 24px; margin-bottom: 4px; }
     .card-title{ font-weight: 600; }
     .card-desc{ color:#4b5563; font-size: 14px; margin-top: 4px; }
-
     section { padding: 64px 0; }
     .section-title{ font-weight: 700; font-size: clamp(28px, 4vw, 38px); letter-spacing:-0.02em; }
-
-    .kicker{
-      color: var(--accent-dark);
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      font-size:12px;
-      margin-bottom:8px;
-    }
-
+    .kicker{ color:#065f46; font-weight:600; text-transform:uppercase; letter-spacing:.14em; font-size:12px; margin-bottom:8px; }
     .feature-wrap{ display:grid; grid-template-columns:1fr; gap: 24px; }
     @media (min-width: 900px){ .feature-wrap{ grid-template-columns:1fr 1fr; } }
-
+    .illustration{ border:1px solid var(--line); border-radius: 24px; padding: 16px; background:#fff; box-shadow: var(--shadow); }
+    .illustration h3{ margin: 0; font-size:18px; font-weight: 600; }
+    .illustration p{ margin: 2px 0 12px; color:#6b7280; font-size:14px; }
+    .board{ background:#f5f7fa; border:1px solid var(--line); border-radius:16px; padding:12px; }
+    .board-grid{ display:grid; grid-template-columns:1fr; gap: 12px; }
+    @media (min-width: 820px){ .board-grid{ grid-template-columns:repeat(3, 1fr);} }
+    .col{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:12px; }
+    .col .col-title{ font-weight:600; margin-bottom:10px; }
+    .ticket{ background:#f8fafc; border:1px solid #e5e7eb; border-radius:12px; padding:10px; font-size:14px; margin-bottom:10px; }
+    .bullets ul{ list-style:none; padding:0; margin: 16px 0 0; }
+    .bullets li{ display:flex; gap:10px; margin: 12px 0; }
     .dot{ width:8px; height:8px; border-radius:50%; background: var(--brand); margin-top: 6px; }
-
-    .how-n{
-      width:34px; height:34px; border-radius:999px;
-      background:var(--brand); color:#fff;
-      display:grid; place-items:center;
-      font-weight:700; margin-right:10px;
-    }
-
+    .how-grid{ display:grid; grid-template-columns:1fr; gap:16px; margin-top: 24px; }
+    @media (min-width: 900px){ .how-grid{ grid-template-columns: repeat(4, 1fr);} }
+    .how-card{ background:#f5f7fa; border:1px solid var(--line); border-radius: 16px; padding:16px; }
+    .how-n{ width:34px; height:34px; border-radius:999px; background: var(--brand); color:#fff; display:grid; place-items:center; font-weight:700; margin-right:10px; }
+    .pricing-grid{ display:grid; grid-template-columns:1fr; gap:16px; margin-top: 24px; }
+    @media (min-width: 900px){ .pricing-grid{ grid-template-columns: repeat(3, 1fr);} }
+    .price{ background:#fff; border:1px solid var(--line); border-radius: 24px; padding: 20px; box-shadow: var(--shadow); }
     .price.highlight{ outline:2px solid var(--brand); }
-
+    .price h4{ margin: 0; color:#6b7280; font-weight:600; font-size:14px; }
+    .price .val{ font-size: 28px; font-weight: 700; margin-top: 4px; }
+    .price p{ color:#6b7280; font-size:14px; margin:6px 0 0; }
+    .price ul{ list-style:none; padding:0; margin:12px 0 0; font-size:14px; }
+    .price li{ display:flex; gap:8px; margin:8px 0; }
+    .faq details{ background:#f5f7fa; border:1px solid var(--line); border-radius:16px; padding: 14px; }
+    .faq summary{ cursor:pointer; font-weight:600; }
     footer{ border-top:1px solid var(--line); padding: 36px 0; }
   </style>
 </head>
@@ -129,7 +96,7 @@
 <body>
   <header>
     <div class="container row">
-      <div class="logo md"><span class="root">Root</span><span class="s">s</span></div>
+      <div class="logo md"><span class="path">Root</span><span class="os">s</span></div>
       <nav>
         <a href="#features">Features</a>
         <a href="#how">How it works</a>
@@ -147,13 +114,13 @@
     <section class="hero">
       <div class="container" style="padding-top: 64px; padding-bottom: 48px;">
         <div style="max-width: 780px;">
-          <div class="logo lg"><span class="root">Root</span><span class="s">s</span></div>
+
+          <div class="logo lg"><span class="path">Root</span><span class="os">s</span></div>
 
           <h1>Live With Roots</h1>
 
           <p class="lead">
-            Roots helps you plan projects, stay on top of maintenance, and understand how everything connects inside your home.
-            A calm command center for everything house.
+            Roots helps you understand your home as a living, evolving system—so projects, maintenance, and upgrades all work together to support a safer, healthier, more connected home.
           </p>
 
           <form class="email-form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll be in touch.');">
@@ -186,12 +153,10 @@
 
     <section id="features">
       <div class="container feature-wrap">
-        <!-- KEEP SAME CONTENT (but updated for brand tone if desired) -->
-        
         <div class="illustration">
-          <p class="muted">Kanban for your house</p>
+          <p class="muted" style="margin:0 0 4px;">Kanban for your house</p>
           <h3>Projects board</h3>
-          <!-- identical board UI -->
+
           <div class="board">
             <div class="board-grid">
               <div class="col">
@@ -220,12 +185,17 @@
           <div class="kicker">Why Roots</div>
           <div class="section-title">Built for the way real homes grow</div>
           <ul>
-            <li><span class="dot"></span><div><strong>Smart schedules</strong><br/><span class="muted">Auto-generate seasonal maintenance for your climate and house profile.</span></div></li>
+            <li><span class="dot"></span><div><strong>Smart schedules</strong><br/><span class="muted">Seasonal maintenance tailored to your climate and home profile.</span></div></li>
+
             <li><span class="dot"></span><div><strong>Budgets & bids</strong><br/><span class="muted">Compare quotes, track actuals vs. estimates, and avoid scope creep.</span></div></li>
-            <li><span class="dot"></span><div><strong>Photos & docs</strong><br/><span class="muted">Keep permits, receipts, paint codes, and warranties in one place.</span></div></li>
-            <li><span class="dot"></span><div><strong>Household collaboration</strong><br/><span class="muted">Assign tasks, share progress, and notify family or pros.</span></div></li>
-            <li><span class="dot"></span><div><strong>Home value insights</strong><br/><span class="muted">Record upgrades and see modeled impact on equity & resale.</span></div></li>
-            <li><span class="dot"></span><div><strong>Vendor rolodex</strong><br/><span class="muted">Rate pros, store contacts, and one-tap rehire from history.</span></div></li>
+
+            <li><span class="dot"></span><div><strong>Photos & docs</strong><br/><span class="muted">Keep permits, receipts, paint codes, and warranties organized.</span></div></li>
+
+            <li><span class="dot"></span><div><strong>Household collaboration</strong><br/><span class="muted">Assign tasks, share updates, and coordinate with family or pros.</span></div></li>
+
+            <li><span class="dot"></span><div><strong>Home value insights</strong><br/><span class="muted">Log upgrades and understand their modeled impact on equity.</span></div></li>
+
+            <li><span class="dot"></span><div><strong>Vendor rolodex</strong><br/><span class="muted">Rate pros, store contacts, and rehire trusted vendors easily.</span></div></li>
           </ul>
         </div>
       </div>
@@ -235,11 +205,15 @@
       <div class="container">
         <div class="kicker">How it works</div>
         <div class="section-title">From idea → done, without the chaos</div>
+
         <div class="how-grid">
-          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">1</div><strong>Create your place</strong></div><p class="muted">Answer a few questions: type, size, age, systems, and goals.</p></div>
+          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">1</div><strong>Create your place</strong></div><p class="muted">Tell us about your home, its age, systems, and goals.</p></div>
+
           <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">2</div><strong>Import projects</strong></div><p class="muted">Start with templates (bath remodel, patio, fence) or add your own.</p></div>
-          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">3</div><strong>Schedule & budget</strong></div><p class="muted">Auto-build timelines, reminders, and budgets; attach quotes and receipts.</p></div>
-          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">4</div><strong>Track value</strong></div><p class="muted">Log improvements, see ROI trends, export for taxes, insurance, or sale.</p></div>
+
+          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">3</div><strong>Schedule & budget</strong></div><p class="muted">Build timelines, reminders, and budgets; attach quotes and receipts.</p></div>
+
+          <div class="how-card"><div style="display:flex; align-items:center;"><div class="how-n">4</div><strong>Track value</strong></div><p class="muted">Log improvements, see ROI trends, export for insurance or sale.</p></div>
         </div>
       </div>
     </section>
@@ -248,9 +222,9 @@
       <div class="container">
         <div class="kicker">Pricing</div>
         <div class="section-title">Start free. Grow as you do.</div>
+
         <div class="pricing-grid">
-          
-          <!-- unchanged except styling -->
+
           <div class="price">
             <h4>Starter</h4>
             <div class="val">$0</div>
@@ -298,14 +272,11 @@
       <div class="container faq">
         <div class="kicker">FAQ</div>
 
-        <details><summary>Is Roots only for homeowners?</summary><p class="muted">It’s ideal for owners, but renters can use maintenance, inventory, and project tracking just as well.</p></details>
-        <br/>
+        <details><summary>Is Roots only for homeowners?</summary><p class="muted">It’s ideal for owners, but renters can also track maintenance, inventory, and projects.</p></details><br/>
 
-        <details><summary>Do you estimate ROI automatically?</summary><p class="muted">We provide modeled estimates based on project type, materials, locality factors, and resale data; you can override anytime.</p></details>
-        <br/>
+        <details><summary>Do you estimate ROI automatically?</summary><p class="muted">We provide modeled estimates based on materials, project type, and locality factors.</p></details><br/>
 
-        <details><summary>Can I share with my partner or contractor?</summary><p class="muted">Yes — invite household members or share project views/links with vendors.</p></details>
-        <br/>
+        <details><summary>Can I share with my partner or contractor?</summary><p class="muted">Yes — invite household members or share read-only project views with vendors.</p></details><br/>
 
         <details><summary>Will there be an iOS/Android app?</summary><p class="muted">Yes. Web first, with native apps following shortly after beta.</p></details>
 
@@ -316,7 +287,7 @@
 
   <footer>
     <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap: 16px; flex-wrap: wrap;">
-      <div class="logo md"><span class="root">Root</span><span class="s">s</span></div>
+      <div class="logo md"><span class="path">Root</span><span class="os">s</span></div>
       <p class="muted">© 2025 Roots. All rights reserved.</p>
     </div>
   </footer>
